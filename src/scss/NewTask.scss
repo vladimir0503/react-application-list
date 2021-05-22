@@ -1,0 +1,246 @@
+.newTaskBlock {
+    position: fixed;
+    right: 0;
+    top: 66px;
+    z-index: 100;
+    width: 975px;
+    height: 100vh;
+    border-radius: 5px;
+    filter: drop-shadow(0 0 1.5px rgba(0, 0, 0, 0.25));
+    background-color: #ecf3f7;
+}
+
+.newTaskHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 52px;
+    padding-right: 52px;
+    height: 60px;
+    filter: drop-shadow(0 0 1.5px rgba(0, 0, 0, 0.25));
+    background-color: #1a4876;
+    color: white;
+
+    img {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+.textAreaWrapper {
+    margin: 66px 0 0 50px;
+}
+
+label {
+    font-size: 14px;
+    line-height: 24px;
+    color: #9f9ea7;
+    font-weight: 300;
+    font-family: "Ubuntu";
+    margin: 0 0 5px 4px;
+}
+
+.textAreaBlock {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 22px;
+}
+
+%textarea {
+    width: 625px;
+    border-radius: 5px;
+    background-color: #f9f9fa;
+    border: 1px solid #e8e8e8;
+}
+
+.textAreaName {
+    @extend %textarea;
+    height: 85px;
+}
+
+.textAreaDescription {
+    @extend %textarea;
+    height: 134px;
+}
+
+.newTaskBtn {
+    width: 150px;
+    height: 30px;
+    font-size: 14px;
+    margin-top: 82px;
+}
+
+//TaskChange
+
+.taskChangeContent {
+    display: flex;
+}
+
+.commentsBlock {
+    width: 80%;
+    height: 100vh;
+    border: 1px solid #d7dce0;
+}
+
+.comments {
+    overflow: auto;
+    height: 450px;
+    width: 713px;
+}
+
+.infoBlock {
+    width: 20%;
+    height: 100vh;
+    padding-top: 28px;
+    padding-left: 32px;
+}
+
+.descriptionWrapper {
+    width: 664px;
+    height: 103px;
+    margin: 25px 0 0 41px;
+    font-size: 14px;
+    line-height: 18px;
+    color: #060606;
+    font-weight: 300;
+}
+
+.description {
+    margin-bottom: 42px;
+}
+
+.addCommentBlock {
+    margin-bottom: 40px;
+}
+
+.title {
+    font-size: 14px;
+    line-height: 24px;
+    color: #9f9ea7;
+    font-weight: 300;
+    font-family: "Ubuntu";
+}
+
+.texAreaComment {
+    @extend %textarea;
+    height: 62px;
+}
+
+.saveBtn {
+    width: 142px;
+    height: 34px;
+}
+
+//CommentItem
+
+.commentItem {
+    display: flex;
+    margin-bottom: 24px;
+}
+
+.avatarWrapper {
+    margin-right: 10px;
+}
+
+.commentAvatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: #f5f5f5;
+    border: 2px solid #e3e9f4;
+}
+
+.commentFullName {
+    font-size: 14px;
+    letter-spacing: 0px;
+    color: #525460;
+    font-weight: 400;
+    font-family: "Ubuntu";
+    margin-bottom: 8px;
+}
+
+.commentDate {
+    font-size: 12px;
+    letter-spacing: 0px;
+    color: #63677c;
+    font-family: "Corporate ACyr";
+    margin-bottom: 13px;
+}
+
+.commentText {
+    width: 620px;
+    height: 100px;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-left: 5px;
+    filter: drop-shadow(0 0 1.5px rgba(0, 0, 0, 0.2));
+    background-color: #e3e9f4;
+}
+
+//TaskInfo
+
+.statusItem {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.statusRgb {
+    width: 11px;
+    height: 11px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.statusValue {
+    font-size: 14px;
+    color: #525460;
+    font-weight: 400;
+    font-family: "Roboto";
+}
+
+.infoItem {
+    margin-bottom: 10px;
+
+    span {
+        color: #1974d2;
+    }
+}
+
+.infoItemName {
+    font-size: 14px;
+    line-height: 24px;
+    color: #a09fa8;
+    font-weight: 300;
+    font-family: "Ubuntu";
+}
+
+.infoItemValue {
+    font-size: 14px;
+    line-height: 24px;
+    color: #030303;
+    font-weight: 300;
+}
+
+.tagsBlock {
+    display: inline-grid;
+}
+
+.tag {
+    display: inline-block;
+    padding-left: 7px;
+    padding-right: 7px;
+    margin-bottom: 6px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    border: 1px solid #9da1aa;
+}
+
+.tagName {
+    position: relative;
+    top: 2px;
+    font-size: 12px;
+    color: #9da1aa;
+    font-weight: 300;
+    font-family: "Roboto";
+}

@@ -1,0 +1,34 @@
+.headerWrapper {
+    position: fixed;
+    z-index: 10000;
+    margin-top: 65px;
+    display: flex;
+    align-items: center;
+    padding-left: 17px;
+    height: 65px;
+    width: 100vw;
+    filter: drop-shadow(0 0 3.5px rgba(0, 0, 0, 0.2));
+    background-color: #d1e0ed;
+}
+
+input {
+    position: relative;
+    z-index: 1;
+    width: 680px;
+    height: 40px;
+    border-radius: 20px;
+    margin-left: 94px;
+    filter: drop-shadow(0 0 3.5px rgba(0, 140, 240, 0.15));
+    background-color: #ffffff;
+    border: 1px solid #42aaff;
+}
+
+.inputBlock {
+    display: flex;
+
+    img {
+        margin-left: -52px;
+        position: relative;
+        z-index: 2;
+    }
+}

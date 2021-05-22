@@ -1,0 +1,41 @@
+@import "Header";
+@import "Navbar";
+@import "TaskPage";
+@import "NewTask";
+
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap");
+
+// * {
+//     outline: 1px solid rebeccapurple;
+// }
+
+body {
+    margin: 0;
+    // font-family: -apple-system, BlinkMacSystemFont, "Ubuntu", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    //     "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: "Roboto", "Ubuntu", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+li {
+    list-style-type: none;
+}
+
+ul {
+    padding-left: 0;
+}
+
+p {
+    margin: 0;
+}
+
+button {
+    border: none;
+    outline: none;
+}
+
+.appContent {
+    display: flex;
+    margin-top: -65px;
+}

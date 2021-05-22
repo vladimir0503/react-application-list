@@ -1,0 +1,10 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+	<title>analytics</title>
+	<defs>
+		<image  width="34" height="30" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAA8AQMAAADsRy4nAAAAAXNSR0IB2cksfwAAAAZQTFRF////AAAAVcLTfgAAAAJ0Uk5T/wDltzBKAAAAXUlEQVR4nGNgwA3k/4PBD9IZDXBGPTqjB43xjxE3wxCN8YcJyviByXiEjeFgD2PIozPcKWAwMTY4oDD+sDM2PLDHFhoCkKDkwMIgKVTxAKC8/A8gQS7jD8gQeywMABINGfOzRm6BAAAAAElFTkSuQmCC"/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+	</style>
+	<use id="Background" href="#img1" x="0" y="2" />
+</svg>

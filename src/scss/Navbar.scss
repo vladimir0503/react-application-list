@@ -1,0 +1,33 @@
+.navbarWrapper {
+    position: fixed;
+    z-index: 20000;
+    top: 0;
+    min-height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
+    background-color: #002137;
+    width: 95px;
+    font-size: 12px;
+    color: #ffffff;
+    font-weight: 300;
+
+    li {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 95px;
+        height: 70px;
+        margin-bottom: 10px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #002b49;
+        }
+    }
+}
+
+.logo {
+    width: 136px;
+    margin: 13px 0 12px 24px;
+}

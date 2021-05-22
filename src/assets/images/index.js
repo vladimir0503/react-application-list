@@ -1,0 +1,9 @@
+export { default as book } from './book.svg';
+export { default as sheet } from './sheet.svg';
+export { default as people } from './people.svg';
+export { default as city } from './city.svg';
+export { default as analytics } from './analytics.svg';
+export { default as settings } from './settings.svg';
+export { default as logo } from './logo.png';
+export { default as search } from './search.svg';
+export { default as close } from './close.svg';

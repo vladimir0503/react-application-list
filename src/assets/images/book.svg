@@ -1,0 +1,10 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700" width="50" height="50">
+	<title>noun_Book_121819</title>
+	<defs>
+		<image  width="336" height="398" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVAAAAGOAQMAAAD7EsnFAAAAAXNSR0IB2cksfwAAAAZQTFRFAAAA////pdmf3QAAAAJ0Uk5TAP9bkSK1AAACR0lEQVR4nO3cPXLzIBAGYDQqKHUEjsLRUJdrqcs1dAR1oVDYsOgn8ffF4iVjF555t/UzsrQsoMHZGGOMk2rMpkRXlyIbHRC6XdYjNBaKSEkqe4jKmKnF6IQ+lciCZVUjogkQWTMNGE1orkTHCxpWjVHTuh4DXFI3mV8iaLZ6OT68olaVParmknZaMPb4/kua72DJICLUFbogVK/ojslwTW2hE0L7/Ei+VGKVdoUahJoWmkxIGA1tdMVovlF5Do0YdaSZLg+nAynp69EuwtSmZ9CCSElJSUlJSUlJSUlJX426GaZ+gamsKO0kodSKvIF0EHkHqRf5AGk54MWokH7iNAaYzh6m0wBTY1Ga9Kgbo1HP+TG66IEoRifz4+z6mo66DowALYcfPUT7cr6bfpe39DpISUlJSUlJSUlJSUlJSUlJSUlJSUl3au8duv5P+xWmXYQpEqSkpKSkpK9Isa6sbeeGqccpJAsFG8OUgk10jRTst1PqcOofTZPS8Ggald79df+fKBSrQ6XAy1sz7QR4z/sDBafXq9FnJKtpYIF3/YM2VBZer/VZMOJ03mgEZuzyB+pwWl+zTlpfCU9a72c+aX3VPml9L9jpCuww80mrKcg14qatkbRGM/Hzj57T6whaKxjNj99A/b2/XLqNrtAJof1NM/FlbM3E0NoylAqEFoyt8RlKbNi27bEu9yZt5Lns3iUO3EFQ2tCm3tD83tJS7zGqa7DDqA5Uwz8VAF+dZgM39Y8GTcE2TA6h8Rjfeux1gtDvskEu+gXeZ8A6JWN/AgAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+	</style>
+	<use id="Background" href="#img1" x="182" y="101" />
+</svg>
