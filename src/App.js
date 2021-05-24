@@ -1,7 +1,9 @@
 import React from 'react'
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
-import TaskPage from "./components/pages/taskPage/TaskPage";
+// import TaskPage from "./components/pages/taskPage/TaskPage";
+import { TaskPage, InfoBasePage, StaffPage, ClientsPage, AssetsPage, SettingsPage } from './components/pages/index'
+import { Route } from 'react-router-dom';
 
 function App() {
 
@@ -19,7 +21,12 @@ function App() {
       <Header />
       <div className='appContent'>
         <Navbar />
-        <TaskPage />
+        <Route path='/information-store' component={InfoBasePage} />
+        <Route path='/applications' component={TaskPage} />
+        <Route path='/staff' component={StaffPage} />
+        <Route path='/clients' component={ClientsPage} />
+        <Route path='/assets' component={AssetsPage} />
+        <Route path='/settings' component={SettingsPage} />
       </div>
     </div>
   );

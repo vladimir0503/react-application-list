@@ -5,14 +5,14 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap");
 
-// * {
-//     outline: 1px solid rebeccapurple;
-// }
+a {
+    text-decoration: none;
+    color: inherit;
+    padding: 0;
+}
 
 body {
     margin: 0;
-    // font-family: -apple-system, BlinkMacSystemFont, "Ubuntu", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
-    //     "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-family: "Roboto", "Ubuntu", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -38,4 +38,15 @@ button {
 .appContent {
     display: flex;
     margin-top: -65px;
+}
+
+.selected {
+    li {
+        background-color: #002b49;
+    }
+}
+
+.pageHeading {
+    margin-top: 181px;
+    margin-left: 159px;
 }

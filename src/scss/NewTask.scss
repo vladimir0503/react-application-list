@@ -21,9 +21,17 @@
     background-color: #1a4876;
     color: white;
 
+    div {
+        display: flex;
+    }
+
     img {
         width: 18px;
         height: 18px;
+    }
+
+    p {
+        margin-right: 22px;
     }
 }
 
@@ -181,7 +189,49 @@ label {
 
 .statusItem {
     display: flex;
+    align-items: baseline;
     margin-bottom: 10px;
+
+    p {
+        cursor: pointer;
+    }
+}
+
+%popup {
+    position: absolute;
+    border-radius: 4px;
+    background-color: #204875;
+    padding-top: 5px;
+    color: white;
+    font-size: 14px;
+    width: 187px;
+
+    li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        cursor: pointer;
+        padding-left: 4px;
+
+        &:hover {
+            background-color: #006ab6;
+        }
+    }
+
+    &.hide {
+        display: none;
+    }
+}
+
+.statusPopup {
+    @extend %popup;
+    top: 93px;
+    right: 5px;
+}
+
+.usersPopup {
+    @extend %popup;
+    top: 240px;
 }
 
 .statusRgb {
@@ -195,7 +245,6 @@ label {
     font-size: 14px;
     color: #525460;
     font-weight: 400;
-    font-family: "Roboto";
 }
 
 .infoItem {
@@ -219,6 +268,10 @@ label {
     line-height: 24px;
     color: #030303;
     font-weight: 300;
+}
+
+.executorBlock {
+    cursor: pointer;
 }
 
 .tagsBlock {

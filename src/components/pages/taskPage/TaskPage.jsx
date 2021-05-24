@@ -1,10 +1,10 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchTasks } from '../../../redux/actions/setTasks'
+import { fetchData } from '../../../redux/actions/getData'
 import TaskChange from './requestsPages/TaskChange';
 import TaskCreation from './requestsPages/TaskCreation';
 import TaskTable from './TaskTable';
-
+import { Route, Link } from 'react-router-dom';
 
 const TasksPage = () => {
 
@@ -14,7 +14,7 @@ const TasksPage = () => {
 
     const headTable = ['ID', 'Название', 'Статус', 'Исполнитель'];
 
-    React.useEffect(() => dispatch(fetchTasks(guid)), []);
+    React.useEffect(() => dispatch(fetchData(guid)), []);
 
     return (
 
@@ -22,14 +22,16 @@ const TasksPage = () => {
             <div className='tasksTableBlock'>
                 <div>
                     <div className='btnBlock'>
-                        <button className='btn'>Создать заявку</button>
+                        <Link to='/applications/task-creation'>
+                            <button className='btn'>Создать заявку</button>
+                        </Link>
                     </div>
                     <div>
                         <TaskTable tasks={tasks} headTable={headTable} />
                     </div>
                 </div>
-                {/* <TaskCreation /> */}
-                <TaskChange />
+                <Route path='/applications/task-creation' component={TaskCreation} />
+                <Route path='/applications/task-change' component={TaskChange} />
             </div>
         </div>
     );

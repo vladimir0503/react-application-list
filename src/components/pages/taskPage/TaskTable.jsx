@@ -1,8 +1,19 @@
-import React from 'react'
+import React from 'react';
+import { useHistory } from 'react-router-dom';
+import { addTaskInfo } from '../../../redux/actions/addTaskInfo';
+import { useSelector, useDispatch } from 'react-redux';
 
 const TaskTable = ({ tasks, headTable }) => {
 
-    console.log(tasks);
+    const state = useSelector(state => state.taskList.taskInfo);
+    const dispatch = useDispatch();
+    const history = useHistory();
+
+    const addInfo = id => {
+        dispatch(addTaskInfo(id));
+        history.push('/applications/task-change');
+    };
+
     return (
         <div>
             : <table>
@@ -15,7 +26,7 @@ const TaskTable = ({ tasks, headTable }) => {
                     {!tasks.length
                         ? 'Loading...'
                         : tasks.map(task =>
-                            <tr key={task.id}>
+                            <tr onClick={() => addInfo(task.id)} key={task.id}>
                                 <td><p>{task.id}</p></td>
                                 <td><p>{task.name}</p></td>
                                 <td>

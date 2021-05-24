@@ -6,7 +6,7 @@ const Header = () => {
         <div className='headerWrapper'>
             <div className='inputBlock'>
                 <input></input>
-                <img src={search}></img>
+                <img src={search} alt='search'></img>
             </div>
         </div>
     );

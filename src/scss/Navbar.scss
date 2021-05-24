@@ -11,19 +11,41 @@
     color: #ffffff;
     font-weight: 300;
 
-    li {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 95px;
-        height: 70px;
-        margin-bottom: 10px;
-        cursor: pointer;
+    ul {
+        li {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 95px;
+            height: 70px;
+            margin-bottom: 10px;
+            cursor: pointer;
 
-        &:hover {
-            background-color: #002b49;
+            &:hover {
+                background-color: #002b49;
+            }
         }
+
+        &:nth-child(2) {
+            img {
+                display: none;
+            }
+            position: relative;
+            top: 18px;
+            left: 14px;
+        }
+    }
+}
+
+.assets {
+    position: relative;
+    top: 18px;
+    left: 14px;
+
+    p {
+        position: relative;
+        bottom: 7px;
     }
 }
 

@@ -3,7 +3,7 @@ import React from 'react'
 const Comments = ({ comments }) => {
     return (
         <div className='comments'>
-            {comments.map(c =>
+            {comments && comments.map(c =>
                 <div className='commentItem'>
                     <div className='avatarWrapper'>
                         <div className='commentAvatar'></div>

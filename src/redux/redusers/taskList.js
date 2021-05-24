@@ -1,14 +1,26 @@
 const initialState = {
-    tasks: []
+    tasks: [],
+    statuses: [],
+    users: [],
+    taskInfo: null,
 };
 
 const taskList = (state = initialState, action) => {
     switch (action.type) {
-        case 'SET_TASKS':
+        case 'GET_DATA':
             return {
                 ...state,
-                tasks: action.payload
+                tasks: action.payload.tasks,
+                statuses: action.payload.statuses,
+                users: action.payload.users
             }
+
+        case 'ADD_TASK_INFO':
+            return {
+                ...state,
+                taskInfo: { ...state.tasks.filter(task => task.id === action.payload)[0] }
+            }
+
 
         default:
             return state
