@@ -2,7 +2,13 @@ const initialState = {
     tasks: [],
     statuses: [],
     users: [],
-    taskInfo: null,
+    taskInfo: {
+        statusId: '',
+        statusName: '',
+        statusRgb: '',
+        executorId: '',
+        executorName: ''
+    },
 };
 
 const taskList = (state = initialState, action) => {

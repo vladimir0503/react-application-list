@@ -52,6 +52,12 @@ const TaskChange = () => {
         history.push('/applications');
     };
 
+    React.useEffect(() => {
+        if (!taskInfo.statusId) {
+            history.push('/applications');
+        };
+    }, []);
+
     return (
         <div className='newTaskBlock'>
             <div className='newTaskHeader'>

@@ -86,7 +86,7 @@ const TaskInfo = ({
             <div className='infoItem'>
                 <p className='infoItemName'>Теги</p>
                 <div className='tagsBlock'>
-                    {taskInfo.tags.map((t, index) =>
+                    {!taskInfo && taskInfo.tags.map((t, index) =>
                         <div key={index} className='tag'>
                             <p className='tagName'>{t.name}</p>
                         </div>)}

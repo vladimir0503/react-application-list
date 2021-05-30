@@ -1,7 +1,6 @@
 import React from 'react'
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
-// import TaskPage from "./components/pages/taskPage/TaskPage";
 import { TaskPage, InfoBasePage, StaffPage, ClientsPage, AssetsPage, SettingsPage } from './components/pages/index'
 import { Route } from 'react-router-dom';
 
