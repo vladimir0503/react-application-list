@@ -6,10 +6,13 @@ import TaskInfo from './TaskInfo';
 import { Link } from 'react-router-dom';
 import { fetchData } from '../../../../redux/actions/getData';
 import { fetchTaskInfo } from '../../../../redux/actions/addTaskInfo';
+import { loadingInit } from '../../../../redux/actions/loadingInit';
+import Loader from '../../../Loader';
 
 
 const TaskChange = () => {
     const { taskInfo, statuses, users } = useSelector(state => state.taskList);
+    const isLoading = useSelector(({ taskList }) => taskList.isLoading);
 
     const [comment, setComment] = React.useState('');
     const [status, setStatus] = React.useState({
@@ -53,6 +56,7 @@ const TaskChange = () => {
     };
 
     const addComment = async () => {
+        dispatch(loadingInit());
         await putTask();
         dispatch(fetchTaskInfo(guid, taskInfo.id));
         setComment('');
@@ -88,7 +92,9 @@ const TaskChange = () => {
                                 >
                                 </textarea>
                             </div>
-                            <button onClick={addComment} className='btn saveBtn'>Сохранить</button>
+                            <button onClick={addComment} className='btn saveBtn'>
+                                {isLoading ? <Loader style='ldSmall' /> : 'Сохранить'}
+                            </button>
                         </div>
                         <Comments comments={taskInfo.lifetimeItems} />
                     </div>

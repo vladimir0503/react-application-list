@@ -9,7 +9,8 @@ const initialState = {
         statusRgb: '',
         executorId: '',
         executorName: ''
-    }
+    },
+    isLoading: false
 };
 
 const taskList = (state = initialState, action) => {
@@ -26,7 +27,14 @@ const taskList = (state = initialState, action) => {
         case 'ADD_TASK_INFO':
             return {
                 ...state,
-                taskInfo: action.payload
+                taskInfo: action.payload,
+                isLoading: false
+            }
+
+        case 'IS_LOADING':
+            return {
+                ...state,
+                isLoading: true
             }
 
         default:

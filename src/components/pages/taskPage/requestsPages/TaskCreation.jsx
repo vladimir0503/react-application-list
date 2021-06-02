@@ -1,10 +1,13 @@
 import React from 'react';
 import { close } from '../../../../assets/images';
 import { Link, useHistory } from 'react-router-dom';
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { fetchData } from '../../../../redux/actions/getData';
 import { postTask } from '../../../../redux/actions/createTask';
 import { fetchTaskInfo } from '../../../../redux/actions/addTaskInfo';
+import { loadingInit } from '../../../../redux/actions/loadingInit';
+import Loader from '../../../Loader';
+
 
 const TaskCreation = () => {
     const [name, setName] = React.useState('');
@@ -12,6 +15,7 @@ const TaskCreation = () => {
 
     const guid = localStorage.getItem('guid');
 
+    const isLoading = useSelector(({ taskList }) => taskList.isLoading);
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -21,6 +25,7 @@ const TaskCreation = () => {
             description
         };
 
+        dispatch(loadingInit());
         await postTask(guid, newTask)(dispatch);
         const id = await fetchData(guid)(dispatch);
         await fetchTaskInfo(guid, id)(dispatch);
@@ -29,6 +34,8 @@ const TaskCreation = () => {
         setName('');
         setDescription('');
     };
+
+    console.log(isLoading);
 
     return (
         <div className='newTaskBlock'>
@@ -57,7 +64,9 @@ const TaskCreation = () => {
                     >
                     </textarea>
                 </div>
-                <button onClick={createTask} className='btn newTaskBtn'>Сохранить</button>
+                <button onClick={createTask} className='btn newTaskBtn'>
+                    {isLoading ? <Loader style='ldSmall' /> : 'Создать'}
+                </button>
             </div>
         </div>
     );

@@ -2,6 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { fetchTaskInfo } from '../../../redux/actions/addTaskInfo';
 import { useSelector, useDispatch } from 'react-redux';
+import Loader from '../../Loader';
 
 const TaskTable = ({ tasks, headTable }) => {
 
@@ -32,7 +33,9 @@ const TaskTable = ({ tasks, headTable }) => {
                 </thead>
                 <tbody>
                     {!tasks.length
-                        ? 'Loading...'
+                        ? <div className='loaderWrapper'>
+                            <Loader style='ldLarge' />
+                        </div>
                         : tasks.map(task =>
                             <tr onClick={() => addInfo(task.id)} key={task.id}>
                                 <td style={addPriorityColor(task.priorityId)}>

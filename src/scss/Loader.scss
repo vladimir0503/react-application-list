@@ -1,0 +1,113 @@
+// .ldSmall {
+//     display: inline-block;
+//     position: relative;
+//     left: -4px;
+//     top: -1px;
+//     width: 20px;
+//     height: 20px;
+// }
+
+// .ldSmall div {
+//     box-sizing: border-box;
+//     display: block;
+//     position: absolute;
+//     width: 20px;
+//     height: 20px;
+//     margin: 3px;
+//     border: 3px solid #fff;
+//     border-radius: 50%;
+//     animation: ldSmall 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+//     border-color: #fff transparent transparent transparent;
+// }
+
+// .ldSmall div:nth-child(1) {
+//     animation-delay: -0.45s;
+// }
+
+// .ldSmall div:nth-child(2) {
+//     animation-delay: -0.3s;
+// }
+
+// .ldSmall div:nth-child(3) {
+//     animation-delay: -0.15s;
+// }
+
+// @keyframes ldSmall {
+//     0% {
+//         transform: rotate(0deg);
+//     }
+//     100% {
+//         transform: rotate(360deg);
+//     }
+// }
+
+%wrapper {
+    display: inline-block;
+    position: relative;
+    left: -4px;
+    top: -1px;
+    width: 20px;
+    height: 20px;
+}
+
+%block {
+    @keyframes anim {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin: 3px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    animation: anim 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+
+    &:nth-child(1) {
+        animation-delay: -0.45s;
+    }
+
+    &:nth-child(2) {
+        animation-delay: -0.3s;
+    }
+
+    &:nth-child(3) {
+        animation-delay: -0.15s;
+    }
+}
+
+.ldSmall {
+    @extend %wrapper;
+
+    div {
+        @extend %block;
+    }
+}
+
+.ldLarge {
+    @extend %wrapper;
+    width: 80px;
+    height: 80px;
+
+    div {
+        @extend %block;
+        width: 64px;
+        height: 64px;
+        margin: 8px;
+        border: 8px solid #fff;
+        border-color: rgb(0, 0, 0) transparent transparent transparent;
+    }
+}
+
+.loaderWrapper {
+    margin-top: 20px;
+    margin-left: 25px;
+}
