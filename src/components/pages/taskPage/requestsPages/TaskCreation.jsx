@@ -65,7 +65,7 @@ const TaskCreation = () => {
                     </textarea>
                 </div>
                 <button onClick={createTask} className='btn newTaskBtn'>
-                    {isLoading ? <Loader style='ldSmall' /> : 'Создать'}
+                    {isLoading ? <Loader style='ldSmall' /> : 'Сохранить'}
                 </button>
             </div>
         </div>
