@@ -11,10 +11,14 @@ export const fetchData = guid => async dispatch => {
     const resStatuses = await fetch(`${apiUrl}/${guid}/Statuses`);
     const statuses = await resStatuses.json();
 
+    const resPriorities = await fetch(`${apiUrl}/${guid}/Priorities`);
+    const priorities = await resPriorities.json();
+
     const data = {
         tasks: tasks.value,
         users,
-        statuses
+        statuses,
+        priorities
     };
 
     dispatch(getData(data));

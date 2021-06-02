@@ -30,9 +30,9 @@ const TasksPage = () => {
                         <TaskTable tasks={tasks} headTable={headTable} />
                     </div>
                 </div>
-                <Route path='/applications/task-creation' component={TaskCreation} />
-                <Route path='/applications/task-change' component={TaskChange} />
             </div>
+            <Route path='/applications/task-creation' component={TaskCreation} />
+            <Route path='/applications/task-change' component={TaskChange} />
         </div>
     );
 };

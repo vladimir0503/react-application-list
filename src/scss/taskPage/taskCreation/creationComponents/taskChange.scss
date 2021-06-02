@@ -1,0 +1,58 @@
+.taskChangeContent {
+    display: flex;
+}
+
+.commentsBlock {
+    width: 80%;
+    height: 100vh;
+    border: 1px solid #d7dce0;
+}
+
+.comments {
+    overflow: auto;
+    height: 450px;
+    width: 713px;
+}
+
+.infoBlock {
+    width: 20%;
+    height: 100vh;
+    padding-top: 28px;
+    padding-left: 32px;
+}
+
+.descriptionWrapper {
+    width: 664px;
+    height: 103px;
+    margin: 25px 0 0 41px;
+    font-size: 14px;
+    line-height: 18px;
+    color: #060606;
+    font-weight: 300;
+}
+
+.description {
+    margin-bottom: 42px;
+}
+
+.addCommentBlock {
+    margin-bottom: 40px;
+}
+
+.title {
+    font-size: 14px;
+    line-height: 24px;
+    color: #9f9ea7;
+    font-weight: 300;
+    font-family: "Ubuntu";
+}
+
+.texAreaComment {
+    @extend %textarea;
+    height: 62px;
+}
+
+.saveBtn {
+    width: 142px;
+    height: 34px;
+}

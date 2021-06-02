@@ -32,9 +32,6 @@ const TaskInfo = ({
         setUsersPopupInit(!usersPopupInit);
     };
 
-    console.log(status);
-    console.log(executor);
-
     return (
         <div>
             <div className='statusItem'>
@@ -45,7 +42,10 @@ const TaskInfo = ({
                 <p onClick={() => setStatusPopupInit(!statusPopupInit)} className='statusValue'>{status.name}</p>
                 <ul className={`statusPopup ${!statusPopupInit ? 'hide' : ''}`}>
                     {statuses.map(status =>
-                        <li onClick={() => handleChangeStatus(status.id)} key={status.id}>
+                        <li
+                            key={status.id}
+                            onClick={() => handleChangeStatus(status.id)} key={status.id}
+                        >
                             <div className='statusRgb' style={{ backgroundColor: `${status.rgb}` }}></div>
                             <p>{status.name}</p>
                         </li>
@@ -86,7 +86,7 @@ const TaskInfo = ({
             <div className='infoItem'>
                 <p className='infoItemName'>Теги</p>
                 <div className='tagsBlock'>
-                    {!taskInfo && taskInfo.tags.map((t, index) =>
+                    {taskInfo.tags.map((t, index) =>
                         <div key={index} className='tag'>
                             <p className='tagName'>{t.name}</p>
                         </div>)}

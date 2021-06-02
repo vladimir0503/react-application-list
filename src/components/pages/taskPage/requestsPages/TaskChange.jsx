@@ -3,13 +3,15 @@ import { useSelector, useDispatch } from 'react-redux';
 import { close } from '../../../../assets/images';
 import Comments from './Comments';
 import TaskInfo from './TaskInfo';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { fetchData } from '../../../../redux/actions/getData';
+import { fetchTaskInfo } from '../../../../redux/actions/addTaskInfo';
 
 
 const TaskChange = () => {
     const { taskInfo, statuses, users } = useSelector(state => state.taskList);
 
+    const [comment, setComment] = React.useState('');
     const [status, setStatus] = React.useState({
         id: taskInfo.statusId,
         name: taskInfo.statusName,
@@ -19,23 +21,14 @@ const TaskChange = () => {
         id: taskInfo.executorId,
         name: taskInfo.executorName
     });
-    const [comment, setComment] = React.useState('');
 
     const guid = localStorage.getItem('guid');
+
     const dispatch = useDispatch();
-    const history = useHistory();
 
-    const changeStatus = id => {
-        setStatus({ ...statuses.filter(status => status.id === id)[0] });
-    };
-
-    const changeExecutor = id => {
-        setExecutor({ ...users.filter(user => user.id === id)[0] });
-    };
-
-    const putTask = async id => {
+    const putTask = async () => {
         const body = {
-            id,
+            id: taskInfo.id,
             comment,
             statusId: status.id,
             executorId: executor.id
@@ -48,15 +41,24 @@ const TaskChange = () => {
             },
             body: JSON.stringify(body)
         });
-        dispatch(fetchData(guid));
-        history.push('/applications');
+        fetchData(guid)(dispatch);
     };
 
-    React.useEffect(() => {
-        if (!taskInfo.statusId) {
-            history.push('/applications');
-        };
-    }, []);
+    const changeStatus = id => {
+        setStatus({ ...statuses.filter(status => status.id === id)[0] });
+    };
+
+    const changeExecutor = id => {
+        setExecutor({ ...users.filter(user => user.id === id)[0] });
+    };
+
+    const addComment = async () => {
+        await putTask();
+        dispatch(fetchTaskInfo(guid, taskInfo.id));
+        setComment('');
+    };
+
+    React.useEffect(() => putTask(), [status, executor]);
 
     return (
         <div className='newTaskBlock'>
@@ -66,7 +68,7 @@ const TaskChange = () => {
                     <p>{taskInfo.name}</p>
                 </div>
                 <Link to='/applications'>
-                    <img src={close}></img>
+                    <img src={close} alt='close'></img>
                 </Link>
             </div>
             <div className='taskChangeContent'>
@@ -86,9 +88,9 @@ const TaskChange = () => {
                                 >
                                 </textarea>
                             </div>
-                            <button onClick={() => putTask(taskInfo.id)} className='btn saveBtn'>Сохранить</button>
+                            <button onClick={addComment} className='btn saveBtn'>Сохранить</button>
                         </div>
-                        <Comments comments={taskInfo.comment} />
+                        <Comments comments={taskInfo.lifetimeItems} />
                     </div>
                 </div>
                 <div className='infoBlock'>

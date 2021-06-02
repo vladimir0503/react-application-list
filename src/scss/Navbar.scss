@@ -26,22 +26,14 @@
                 background-color: #002b49;
             }
         }
-
-        &:nth-child(2) {
-            img {
-                display: none;
-            }
-            position: relative;
-            top: 18px;
-            left: 14px;
-        }
     }
 }
 
 .assets {
     position: relative;
-    top: 18px;
-    left: 14px;
+    top: -2px;
+    left: 0px;
+    width: 28px;
 
     p {
         position: relative;

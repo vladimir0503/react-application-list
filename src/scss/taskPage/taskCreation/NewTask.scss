@@ -1,0 +1,83 @@
+@import "./creationComponents/taskChange";
+@import "./creationComponents/commentItem";
+@import "./creationComponents/taskInfo";
+
+.newTaskBlock {
+    position: fixed;
+    right: 0;
+    top: 66px;
+    z-index: 3000;
+    width: 975px;
+    height: 100vh;
+    border-radius: 5px;
+    filter: drop-shadow(0 0 1.5px rgba(0, 0, 0, 0.25));
+    background-color: #ecf3f7;
+}
+
+.newTaskHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 52px;
+    padding-right: 52px;
+    height: 60px;
+    filter: drop-shadow(0 0 1.5px rgba(0, 0, 0, 0.25));
+    background-color: #1a4876;
+    color: white;
+
+    div {
+        display: flex;
+    }
+
+    img {
+        width: 18px;
+        height: 18px;
+    }
+
+    p {
+        margin-right: 22px;
+    }
+}
+
+.textAreaWrapper {
+    margin: 66px 0 0 50px;
+}
+
+label {
+    font-size: 14px;
+    line-height: 24px;
+    color: #9f9ea7;
+    font-weight: 300;
+    font-family: "Ubuntu";
+    margin: 0 0 5px 4px;
+}
+
+.textAreaBlock {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 22px;
+}
+
+%textarea {
+    width: 625px;
+    border-radius: 5px;
+    background-color: #f9f9fa;
+    border: 1px solid #e8e8e8;
+}
+
+.textAreaName {
+    @extend %textarea;
+    height: 85px;
+}
+
+.textAreaDescription {
+    @extend %textarea;
+    height: 134px;
+}
+
+.newTaskBtn {
+    width: 150px;
+    height: 30px;
+    font-size: 14px;
+    margin-top: 82px;
+}

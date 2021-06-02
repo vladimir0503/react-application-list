@@ -1,22 +1,30 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { addTaskInfo } from '../../../redux/actions/addTaskInfo';
+import { fetchTaskInfo } from '../../../redux/actions/addTaskInfo';
 import { useSelector, useDispatch } from 'react-redux';
 
 const TaskTable = ({ tasks, headTable }) => {
 
-    const state = useSelector(state => state.taskList.taskInfo);
+    const priorities = useSelector(({ taskList }) => taskList.priorities);
+
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const addInfo = id => {
-        dispatch(addTaskInfo(id));
+    const guid = localStorage.getItem('guid');
+
+    const addInfo = async id => {
+        await fetchTaskInfo(guid, id)(dispatch);
         history.push('/applications/task-change');
     };
 
+    const addPriorityColor = id => {
+        const currentPr = priorities.filter(p => p.id === id);
+        return { borderLeft: `4px solid ${currentPr[0].rgb}` }
+    };
+
     return (
-        <div>
-            : <table>
+        <div className='tableWrapper'>
+            <table>
                 <thead>
                     <tr>
                         {headTable.map((item, i) => <th key={i}><p>{item}</p></th>)}
@@ -27,7 +35,9 @@ const TaskTable = ({ tasks, headTable }) => {
                         ? 'Loading...'
                         : tasks.map(task =>
                             <tr onClick={() => addInfo(task.id)} key={task.id}>
-                                <td><p>{task.id}</p></td>
+                                <td style={addPriorityColor(task.priorityId)}>
+                                    <p>{task.id}</p>
+                                </td>
                                 <td><p>{task.name}</p></td>
                                 <td>
                                     <div

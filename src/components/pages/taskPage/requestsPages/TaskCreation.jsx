@@ -4,7 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux'
 import { fetchData } from '../../../../redux/actions/getData';
 import { postTask } from '../../../../redux/actions/createTask';
-import { addTaskInfo } from '../../../../redux/actions/addTaskInfo';
+import { fetchTaskInfo } from '../../../../redux/actions/addTaskInfo';
 
 const TaskCreation = () => {
     const [name, setName] = React.useState('');
@@ -22,8 +22,8 @@ const TaskCreation = () => {
         };
 
         await postTask(guid, newTask)(dispatch);
-        const val = await fetchData(guid)(dispatch);
-        dispatch(addTaskInfo(val));
+        const id = await fetchData(guid)(dispatch);
+        await fetchTaskInfo(guid, id)(dispatch);
 
         history.push('/applications/task-change');
         setName('');

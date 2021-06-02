@@ -1,3 +1,5 @@
+@import "./taskCreation/NewTask";
+
 .tasksWrapper {
     display: flex;
     margin-top: 129px;
@@ -93,6 +95,11 @@
     }
 }
 
+.tableWrapper {
+    width: 2000px;
+    height: 100vh;
+}
+
 .btnBlock {
     display: flex;
     align-items: center;
@@ -102,6 +109,7 @@
     height: 85px;
     width: 100vw;
     position: fixed;
+    z-index: 2000;
 }
 
 .btn {
